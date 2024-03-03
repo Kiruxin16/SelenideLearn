@@ -4,7 +4,7 @@ package element.learning.util;
 import java.io.IOException;
 import java.util.Properties;
 
-import static element.learning.util.Constants.MAIN_URL;
+import static element.learning.util.Constants.MAIN_URL_NAME;
 
 public class PropertiesReader {
 
@@ -25,6 +25,6 @@ public class PropertiesReader {
         if (!isPropertiesRead) {
             getProperties();
         }
-        return PROPERTIES.getProperty(MAIN_URL);
+        return PROPERTIES.getProperty(MAIN_URL_NAME);
     }
 }
