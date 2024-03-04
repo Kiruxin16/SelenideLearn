@@ -21,6 +21,7 @@ public abstract class SelenideTestBase extends TestBase {
     @Step("Настройка браузера")
     public void setUpBeforeEach(){
         Configuration.browserSize = "1440x900";
+        Configuration.timeout = 6000;
     }
 
     @AfterEach
