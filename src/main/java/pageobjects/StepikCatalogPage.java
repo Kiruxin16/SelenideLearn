@@ -4,17 +4,20 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import lombok.Getter;
 
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$x;
+import static com.codeborne.selenide.Selenide.$$x;
+
 
 
 public class StepikCatalogPage extends StepikPage{
     private final SelenideElement pythonCourseElement=$x("//a[@aria-label='\"Поколение Python\": курс для начинающих']");
-    private final SelenideElement searchText=$x("//input[@class='search-form__input ']");
-
     @Getter
-    private final ElementsCollection searchResult= $$x("//ul[contains(@class,'course-cards')]/li");
+    private final ElementsCollection searchResult= $$x("//a[contains(@class,'course-card__title')]");
 
     public void pushToPythonCourseText(){
         pythonCourseElement.click();
     }
+
+
+
 }

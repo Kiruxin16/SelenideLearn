@@ -2,9 +2,9 @@ package tasks.uitests;
 
 
 import org.junit.jupiter.api.*;
-import steps.checksteps.CheckElementsExistsSteps;
 import tasks.SelenideTestBase;
 import static element.learning.util.Url.MAIN_URL;
+import static element.learning.util.Constants.JAVA_SEARCH;
 
 @DisplayName("Выполнение учебного задания по Selenide")
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -40,6 +40,10 @@ public class MainTest extends SelenideTestBase{
     @Order(3)
     @DisplayName("Проверка результатов поиска курсов по Запросу Java")
     public void testCheckSearchResult(){
+        //Шаг поиска по запросу Java
+        mainPageSteps.startCourseSearch(stepikMainPage,JAVA_SEARCH);
+        //Шаг сравнения результатов с фразой из поиска
+        compareResultsSteps.compareSearchResult(stepikCatalogPage,JAVA_SEARCH);
 
     }
 

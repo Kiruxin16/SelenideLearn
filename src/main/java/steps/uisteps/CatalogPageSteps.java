@@ -1,7 +1,6 @@
 package steps.uisteps;
 
 import io.qameta.allure.Step;
-import pageobjects.StepicCoursePage;
 import pageobjects.StepikCatalogPage;
 
 public class CatalogPageSteps {
