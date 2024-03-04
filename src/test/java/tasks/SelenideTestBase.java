@@ -5,14 +5,18 @@ import io.qameta.allure.Step;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.TestInstance;
-import pageobjects.MainStepicPage;
+import pageobjects.StepicCoursePage;
+import pageobjects.StepikCatalogPage;
+import pageobjects.StepikMainPage;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.closeWindow;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public abstract class SelenideTestBase extends TestBase {
-    protected MainStepicPage mainStepicPage = new MainStepicPage();
+    protected StepikMainPage stepikMainPage;
+    protected StepikCatalogPage stepikCatalogPage = new StepikCatalogPage();
+    protected StepicCoursePage stepicCoursePage = new StepicCoursePage();
     @BeforeAll
     @Step("Настройка браузера")
     public void setUpBeforeEach(){
