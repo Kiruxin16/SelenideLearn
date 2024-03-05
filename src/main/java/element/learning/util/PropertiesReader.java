@@ -1,10 +1,14 @@
 package element.learning.util;
 
 
+import element.learning.model.Credentials;
+
 import java.io.IOException;
 import java.util.Properties;
 
+import static element.learning.util.Constants.LOGIN;
 import static element.learning.util.Constants.MAIN_URL_NAME;
+import static element.learning.util.Constants.PASSWORD;
 
 public class PropertiesReader {
 
@@ -21,10 +25,19 @@ public class PropertiesReader {
         isPropertiesRead = true;
     }
 
-    public static String getMainUrl(String name) {
+    public static String getMainUrl() {
         if (!isPropertiesRead) {
             getProperties();
         }
         return PROPERTIES.getProperty(MAIN_URL_NAME);
     }
+
+    public static Credentials getCredentials(){
+        if(!isPropertiesRead){
+            getProperties();
+        }
+        return new Credentials(PROPERTIES.getProperty(LOGIN), PROPERTIES.getProperty(PASSWORD));
+    }
+
+
 }

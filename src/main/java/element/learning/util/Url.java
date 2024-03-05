@@ -8,6 +8,5 @@ import javax.swing.plaf.PanelUI;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class Url {
 
-    public static final String STAND = "stand";
-    public static final String MAIN_URL = PropertiesReader.getMainUrl("stand");
+    public static final String MAIN_URL = PropertiesReader.getMainUrl();
 }

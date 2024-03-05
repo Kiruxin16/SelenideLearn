@@ -1,7 +1,12 @@
 package tasks.uitests;
 
-
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import tasks.SelenideTestBase;
 import static element.learning.util.Url.MAIN_URL;
 import static element.learning.util.Constants.JAVA_SEARCH;
@@ -47,5 +52,26 @@ public class MainTest extends SelenideTestBase{
 
     }
 
+    @Test
+    @Order(4)
+    @DisplayName("Проверка авторизации")
+    public void testAuthCheck(){
+        //Шаг нажатия на кноку 'Войти'
+        mainPageSteps.startAuthentication(stepikMainPage);
+        //Шаг проверки открытия окна аутентификации
+        checkElementsExistsSteps.checkAuthModal(stepikMainPage);
+        //Шаг выполнения аутентификации
+        authModalSteps.performAuthorization(stepikMainPage);
+        //Шаг провеки что авторизация прошла
+        checkAuthorizationSteps.checkAuthorization(stepikMainPage);
+
+    }
+
+
+    @AfterEach
+    public void logOut(){
+        //Шаг выхода из профиля
+        commonUiSteps.logOut(stepikMainPage);
+    }
 
 }

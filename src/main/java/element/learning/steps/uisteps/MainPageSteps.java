@@ -1,8 +1,7 @@
-package steps.uisteps;
+package element.learning.steps.uisteps;
 
 import io.qameta.allure.Step;
-import pageobjects.StepikMainPage;
-import static element.learning.util.Constants.JAVA_SEARCH;
+import element.learning.pageobjects.StepikMainPage;
 
 public class MainPageSteps {
     @Step("Кликнуть чек-бокс 'Бесплатные'")
@@ -14,5 +13,10 @@ public class MainPageSteps {
     @Step("Произвести поиск курсов по введенному тексту 'Java'")
     public void startCourseSearch(StepikMainPage stepikMainPage, String searchPhrase){
         stepikMainPage.searchCourses(searchPhrase);
+    }
+
+    @Step("Нажать кнопку 'Войти'")
+    public void startAuthentication(StepikMainPage stepikMainPage){
+        stepikMainPage.loginButtonClick();
     }
 }

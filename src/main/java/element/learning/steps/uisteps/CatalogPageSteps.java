@@ -1,7 +1,7 @@
-package steps.uisteps;
+package element.learning.steps.uisteps;
 
 import io.qameta.allure.Step;
-import pageobjects.StepikCatalogPage;
+import element.learning.pageobjects.StepikCatalogPage;
 
 public class CatalogPageSteps {
     @Step("Нажать на название курса ''Поколение Python': курс для начинающих'")

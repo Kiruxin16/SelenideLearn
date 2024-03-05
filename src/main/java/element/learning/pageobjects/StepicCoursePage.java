@@ -1,4 +1,4 @@
-package pageobjects;
+package element.learning.pageobjects;
 
 import com.codeborne.selenide.SelenideElement;
 import lombok.Getter;
